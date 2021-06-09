@@ -6,6 +6,12 @@
 \newcommand{\xixi}{^2}
 \newcommand{\myfont}[1]{\texttt{\textbf{\textit{#1}}}}
 \newcommand{\hate}[2]{#1 hate #2}  %[参数个数]{#1,#2,...,#参数}
+\newenvironment{myenv}{
+\begin{center}\huge\myfont{MYENV}\end{center}
+\begin{quote}\par
+}{
+\end{quote}
+}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{cite}
@@ -48,13 +54,13 @@
     \section{figure}
     \myfont{Yindao Mayi in Fig \ref{Fig.1}}
     \begin{figure}[H]
-    \vspace{0.cm}
-    \centering
-    \includegraphics[width=5cm,
-                     height=5cm]{timg.jpeg}
-    \setlength{\abovecaptionskip}{0.cm}
-    \setlength{\belowcaptionskip}{0.cm}
-    \caption{\small yindaomayi}\label{Fig.1}
+        \vspace{0.cm}
+        \centering
+        \includegraphics[width=5cm,
+                        height=5cm]{timg.jpeg}
+        \setlength{\abovecaptionskip}{0.cm}
+        \setlength{\belowcaptionskip}{0.cm}
+        \caption{\small yindaomayi}\label{Fig.1}
     \end{figure}
 
     \section{tabular}
@@ -72,6 +78,11 @@
             \hline
             \end{tabular}
     \end{table}
+
+    \section{myenvironment}
+    \begin{myenv}
+        just test my environment
+    \end{myenv}
 
     \bibliography{ref}
 

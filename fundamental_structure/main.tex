@@ -1,0 +1,79 @@
+% 导言
+\documentclass[12pt]{article} %book, report, letter
+\title{first doc}
+\author{Zip Ye}
+\date{\today}
+\newcommand{\xixi}{^2}
+\newcommand{\myfont}[1]{\texttt{\textbf{\textit{#1}}}}
+\newcommand{\hate}[2]{#1 hate #2}  %[参数个数]{#1,#2,...,#参数}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cite}
+\bibliographystyle{ieeetr}
+\graphicspath{{figures/}}
+% 正文
+\begin{document}
+    \maketitle
+    hello world
+
+    let $f(x)$ defined by the formula $$f(x)=3x^2+x-1$$ which is a polynomial
+    of degree 2. gougu is Eq.\ref{gougu}
+    \begin{equation}
+        A\xixi=B\xixi+C\xixi \label{gougu}
+    \end{equation}
+
+    % 字体(两种等价)
+    \textrm{Roman Family} \texttt{typewiter family}
+
+    {\rmfamily Roman Family} {\ttfamily typewiter family}
+
+    % 字体粗细、形状 \\:换行
+    \textbf{boldface series} \textit{Italic Shape}\\
+    % newcommand
+    \texttt{\textbf{\textit{type+bold+Italic}}}\\
+    \myfont{type+bold+Italic}
+
+    % 字体大小
+    {\tiny hello\cite{b2}}
+    {\scriptsize hello}
+    {\small hello}
+    {\normalsize hello}
+    {\large hello}
+    {\huge hello\cite{b1}}
+
+    % newcommand
+    \hate{rat}{cat}
+    \section{refer}
+    ``hello'' `hello'
+    \section{figure}
+    \myfont{Yindao Mayi in Fig \ref{Fig.1}}
+    \begin{figure}[H]
+    \vspace{0.cm}
+    \centering
+    \includegraphics[width=5cm,
+                     height=5cm]{timg.jpeg}
+    \setlength{\abovecaptionskip}{0.cm}
+    \setlength{\belowcaptionskip}{0.cm}
+    \caption{\small yindaomayi}\label{Fig.1}
+    \end{figure}
+
+    \section{tabular}
+    \myfont{AFAF in Tab \ref{Tab3k}}
+    \begin{table}[H]
+        \centering
+        \caption{\small 3 countries} \label{Tab3k}
+        \begin{tabular}{l|c|p{5cm} r}
+            \hline
+            name & CN & USA & UK \\
+            \hline
+            Africa & 1 & 0 & 0 \\
+            \hline
+            NA & 0 & 1 & 0\\
+            \hline
+            \end{tabular}
+    \end{table}
+
+    \bibliography{ref}
+
+
+\end{document}
